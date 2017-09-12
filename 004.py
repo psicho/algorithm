@@ -14,17 +14,27 @@ for i in range(r):
             break
         if j == len(l) - 1:
             l.append(k)
-f.append(l.pop(0))
-print(l[0])
-print(f)
-print(f[-1])
-while len(l) > 0:
-    if int(l[0][0]) <= int(f[-1][1]) and int(l[i][1]) >= int(f[i-1][1]):
-        l.pop(0)
-    else:
-        f.append(l.pop(0))
-    print(l)
-    print(f)
+# print(l)
+f.append(l[0][1])
+l.pop(0)
+# print(f)
+t = len(l)
+if len(l):
+    # for i in range(t):
+    while len(l):
+        # print('l2',l)
+        # print('f2',f)
+        if int(l[0][0]) <= int(f[-1]) and int(l[0][1]) >= int(f[-1]):
+            l.pop(0)
+            # print(len(l))
+        else:
+            f.append(l[0][1])
+            l.pop(0)
+        if not len(l):
+            break
+print(len(f))
+for i in f:
+    print(i)
 
 
 
